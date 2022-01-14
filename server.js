@@ -5,11 +5,10 @@ const schema = require("./schema/schema");
 const cors = require("cors");
 const app = express();
 
-// DB= mongodb+srv://shahed:shahed123@cluster0.juwqm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+const DB =
+  "mongodb+srv://shahed:shahed123@cluster0.juwqm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 app.use(cors());
-mongoose.connect(
-  "mongodb+srv://shahed:shahed123@cluster0.juwqm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-);
+mongoose.connect(DB);
 mongoose.connection.once("open", () => console.log("Database connected"));
 
 app.use(
